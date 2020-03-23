@@ -1,26 +1,26 @@
 package animresc
 
 import (
-	"fmt"
-	"net/url"
-	"net/http"
-	"encoding/json"
-	"io"
 	"bytes"
+	"encoding/json"
+	"fmt"
+	"io"
+	"net/http"
+	"net/url"
 )
 
 type Client struct {
-	BaseURL *url.URL
+	BaseURL   *url.URL
 	UserAgent string
 
-	httpClient *http.Client 
+	httpClient *http.Client
 }
 
 type Adoption struct {
-	ID int `json:"id"`
+	ID      int      `json:"id"`
 	Adopter *Adopter `json:"adopter"`
 	Adoptee *Adoptee `json:"adoptee"`
-	Date string `json:"date"`
+	Date    string   `json:"date"`
 }
 
 type Adopter struct {
@@ -58,9 +58,9 @@ func NewClient(opts ...func(*Client)) *Client {
 	c := &Client{
 		BaseURL: &url.URL{
 			Scheme: "http",
-			Host: "localhost:3000",
+			Host:   "localhost:3000",
 		},
-		UserAgent: "animresc-go/0.1.0",
+		UserAgent:  "animresc-go/0.1.0",
 		httpClient: &http.Client{},
 	}
 
@@ -99,7 +99,7 @@ func (c *Client) GetAll(a interface{}, name string) (interface{}, error) {
 }
 
 func (c *Client) Create(a interface{}, name string) (interface{}, error) {
-	req, err := c.newRequest("POST", fmt.Sprintf("/%s", name), nil)
+	req, err := c.newRequest("POST", fmt.Sprintf("/%s", name), a)
 	if err != nil {
 		return a, err
 	}
@@ -108,7 +108,7 @@ func (c *Client) Create(a interface{}, name string) (interface{}, error) {
 }
 
 func (c *Client) Update(a interface{}, name, id string) (interface{}, error) {
-	req, err := c.newRequest("GET", fmt.Sprintf("/%s/%s/update", name, id), nil)
+	req, err := c.newRequest("PATCH", fmt.Sprintf("/%s/%s", name, id), nil)
 	if err != nil {
 		return a, err
 	}
@@ -117,11 +117,11 @@ func (c *Client) Update(a interface{}, name, id string) (interface{}, error) {
 }
 
 func (c *Client) Delete(name, id string) error {
-	req, err := c.newRequest("GET", fmt.Sprintf("/%s/%s/delete", name, id), nil)
+	req, err := c.newRequest("DELETE", fmt.Sprintf("/%s/%s", name, id), nil)
 	if err != nil {
 		return err
 	}
-	
+
 	_, err = c.do(req, nil)
 	return err
 }
