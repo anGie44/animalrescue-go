@@ -22,8 +22,8 @@ func (a Adoptee) String() string {
 	return Stringify(a)
 }
 
-// ListAdoptees lists all of the adoptees for an animal rescue.
-func (s *AdopteesService) ListAdoptees(ctx context.Context) ([]*Adoptee, *Response, error) {
+// ListAll lists all of the adoptees for an animal rescue.
+func (s *AdopteesService) ListAll(ctx context.Context) ([]*Adoptee, *Response, error) {
 	u := "adoptees"
 	req, err := s.client.NewRequest("GET", u, nil)
 	if err != nil {

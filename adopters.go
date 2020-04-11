@@ -30,8 +30,8 @@ func (a Adopter) String() string {
 	return Stringify(a)
 }
 
-// ListAdopters lists all of the adopters for an animal rescue.
-func (s *AdoptersService) ListAdopters(ctx context.Context) ([]*Adopter, *Response, error) {
+// ListAll lists all of the adopters for an animal rescue.
+func (s *AdoptersService) ListAll(ctx context.Context) ([]*Adopter, *Response, error) {
 	u := "adopters"
 	req, err := s.client.NewRequest("GET", u, nil)
 	if err != nil {
