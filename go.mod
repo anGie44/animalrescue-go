@@ -1,3 +1,3 @@
-module github.com/anGie44/go-animal-rescue/v2
+module github.com/anGie44/go-animal-rescue
 
 go 1.14
