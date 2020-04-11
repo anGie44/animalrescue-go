@@ -7,7 +7,7 @@ inspired by the `go-github` client library
 ## Usage ##
 
 ```go
-import "github.com/anGie44/go-animal-rescue/v1/animalrescue"	// with go modules enabled (GO111MODULE=on or outside GOPATH)
+import "github.com/anGie44/go-animal-rescue/v2/animalrescue"	// with go modules enabled (GO111MODULE=on or outside GOPATH)
 import "github.com/anGie44/go-animal-rescue/animalrescue" // with go modules disabled
 ```
 
