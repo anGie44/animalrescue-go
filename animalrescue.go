@@ -14,7 +14,7 @@ import (
 )
 
 const (
-	defaultBaseURL = "http://localhost:8080/"
+	defaultBaseURL = "https://animal-rescue-api.herokuapp.com/"
 	userAgent      = "go-animal-rescue"
 )
 
