@@ -22,8 +22,8 @@ func (pp PetPreference) String() string {
 	return Stringify(pp)
 }
 
-// ListPetPreferences lists all of the pet-preferences within an animal rescue.
-func (s *PetPreferencesService) ListPetPreferences(ctx context.Context) ([]*PetPreference, *Response, error) {
+// ListAll lists all of the pet-preferences within an animal rescue.
+func (s *PetPreferencesService) ListAll(ctx context.Context) ([]*PetPreference, *Response, error) {
 	u := "petprefs"
 	req, err := s.client.NewRequest("GET", u, nil)
 	if err != nil {

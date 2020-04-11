@@ -23,8 +23,8 @@ func (a Adoption) String() string {
 	return Stringify(a)
 }
 
-// ListAdoptions list all of the adoptions for an animal rescue.
-func (s *AdoptionsService) ListAdoptions(ctx context.Context) ([]*Adoption, *Response, error) {
+// ListAll lists all of the adoptions for an animal rescue.
+func (s *AdoptionsService) ListAll(ctx context.Context) ([]*Adoption, *Response, error) {
 	u := "adoptions"
 	req, err := s.client.NewRequest("GET", u, nil)
 	if err != nil {
