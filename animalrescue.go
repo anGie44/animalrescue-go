@@ -14,7 +14,7 @@ import (
 )
 
 const (
-	defaultBaseURL = "http://localhost:8080"
+	defaultBaseURL = "http://localhost:8080/"
 	userAgent      = "go-animal-rescue"
 )
 
