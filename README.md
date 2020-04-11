@@ -1,6 +1,6 @@
 # go-animal-rescue
 
-go-animal-rescue is a Go client library for accessing the [Animal Rescue API v1](https://github.com/anGie44/animal-rescue/tree/v1.0)
+go-animal-rescue is a Go client library for accessing the [Animal Rescue API v1.1](https://github.com/anGie44/animal-rescue/tree/v1.1)
 
 inspired by the `go-github` client library
 
