@@ -1,1 +1,1 @@
-# animalrescue-go
+# go-animal-rescue
